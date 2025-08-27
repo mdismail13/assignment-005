@@ -16,7 +16,8 @@ document
         alert("📞 Calling " + serviceName + " " + serviceNumber +"...");
         document.getElementById('coin').innerText = coin - 20;
 
-        const history = document.createElement('div')
+        const date = new Date().toLocaleTimeString();
+        const history = document.createElement('div');
         
         history.innerHTML = `
             <div>
@@ -24,11 +25,14 @@ document
                 <p class = "text-[18px] text-[#5C5C5C]">${serviceNumber}</p>
             </div>
             <div>
-            <p>hello</p>
+            <p>${date}</p>
             </div>
         `;
         history.classList.add('flex', 'justify-between', 'items-center', 'p-4', 'mb-2', 'bg-[#FAFAFA]', 'rounded-xl');
 
         document.getElementById('call-history').append(history);
+    }
+    if(event.target.id === 'clear'){
+        document.getElementById('call-history').innerHTML = '';
     }
   });
