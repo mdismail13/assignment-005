@@ -2,8 +2,8 @@ document
   .getElementById("card-container")
   .addEventListener("click", function (event) {
     if(event.target.className.includes('heart')){
-        const fontHeartCounter = Number(document.getElementById('nav-heart').innerText);
-        document.getElementById('nav-heart').innerText = fontHeartCounter + 1;
+        const heartCounter = Number(document.getElementById('nav-heart').innerText);
+        document.getElementById('nav-heart').innerText = heartCounter + 1;
     }
     if(event.target.className.includes('call-btn')){
         const serviceName = event.target.parentNode.parentNode.childNodes[3].innerText;
@@ -33,6 +33,21 @@ document
         document.getElementById('call-history').append(history);
     }
     if(event.target.id === 'clear'){
-        document.getElementById('call-history').innerHTML = '';
+        document.getElementById('call-history').replaceChildren();
+    }
+
+    if(event.target.classList.contains('copy')){
+        const text = event.target.parentNode.parentNode.childNodes[7].childNodes[1].innerText;
+        navigator.clipboard.writeText(text);
+        alert('Number copied!');
+        const copyCounter = Number(document.getElementById('copy-counter').innerText);
+        document.getElementById('copy-counter').innerText = copyCounter + 1;
+    }
+    if(event.target.className.includes('copy-font')){
+        const text = event.target.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].innerText;
+        navigator.clipboard.writeText(text);
+        alert('Number copied!');
+        const copyCounter = Number(document.getElementById('copy-counter').innerText);
+        document.getElementById('copy-counter').innerText = copyCounter + 1;    
     }
   });
