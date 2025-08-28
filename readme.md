@@ -16,11 +16,11 @@
 ```document.body.append(newElement);```
 ### 3. What is **Event Bubbling** and how does it work?
 ---
-- **Event Bubbling** is a feature of DOM. When an event happens, DOM starts to capture the event from the root of the document. Then it comes one by one through the parent and child element and captures the event. After capturing the event, it starts to go back to the root of the element and capture all the events it finds on the path. The behavior of the DOM for capturing the event is called **Event Bubbling**.
+- **Event Bubbling** is a feature of DOM. When an event happens, the event fist runs on the element itself. Then it goes up to the parent element. After that it goes up to the grandparent. At last it goes up to the window step by step. This is called **Event Bubbling**.
 ### 4. What is **Event Delegation** in JavaScript? Why is it useful?
 ---
 - **Event Delegation** is also a feature of DOM. If we add event for all the child element of a parent element, it would be a huge lines of code and also this will decrease the performance of the website. But if we add an event for only the parent element and delegate the event by using condition, it would be more efficient and less risky for find an error.
 ### 5. What is the difference between **preventDefault() and stopPropagation()** methods?
 ---
-- **preventDefault()** is a method of controlling the default behavior of a button. it prevents the reload of the website after clicking the button.
-- **stopPropagation()** is a method to prevent the behavior of **event bubbling** in the same lair.
+- **preventDefault()** is a method of preventing the default browser behavior of an element.
+- **stopPropagation()** is a method for preventing the **event bubbling** for going up to the parent and the grandparent. It also prevents the **event capturing**.
