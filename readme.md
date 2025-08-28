@@ -14,7 +14,7 @@
 ``` newElement.innerText = 'Hello World! I'm learning Javascript.'; ```
 3. Then we have to **append** the newElement into a parent element in the DOM.
 ```document.body.append(newElement);```
-3. What is **Event Bubbling** and how does it work?
+### 3. What is **Event Bubbling** and how does it work?
 ---
 -**Event Bubbling** is a feature of DOM. When an event happens, DOM starts to capture the event from the root of the document. Then it comes one by one through the parent and child element and captures the event. After capturing the event, it starts to go back to the root of the element and capture all the events it finds on the path. The behavior of the DOM for capturing the event is called **Event Bubbling**.
 ### 4. What is **Event Delegation** in JavaScript? Why is it useful?
